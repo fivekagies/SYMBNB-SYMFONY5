@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hello page!{% endblock %}
+{% block body %}
+    <h4>Hello {{ prenom }} vous avez {{ age }} ans</h4>
+
+   {#<h1 align="center">{{ title | upper }}</h1>
+    <p>Salut tous le monde, j'espere que vous allez bien ainsi que votre famille et vos amis</p>
+#}
+    {% if  age >18 %}
+        <p> vous etes majeur</p>
+    {% elseif  age  <= 12 and age >9 %}
+        <p> vous etes un adolecant</p>
+    {% else %}
+        <p>salut mon petit mineur</p>
+    {% endif %}
+
+    <p><a href="{{ path('hello',{'prenom': 'yassine','age':22}) }}">Voir la page Bonjour</a> </p>
+    <h4>Listes des personnes</h4>
+    {#<ol>
+        {% for personne,age in personnes %}
+            <li>{{ personne }} a {{ age }}</li>
+        {% endfor %}
+    </ol>#}
+{% endblock %}
