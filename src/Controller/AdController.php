@@ -24,6 +24,13 @@ class AdController extends AbstractController
     {
         //$repo = $this->getDoctrine()->getRepository(Ad::class);
         $ads=$repo->findAll();
+
+
+
+        $ad = $repo->findOneByTitle("Annonces corrigé !");
+
+        dump($ad);
+
         return $this->render('ad/index.html.twig', [
             'ads' => $ads
         ]);
